@@ -43,7 +43,7 @@
                             <div class="col-md-6 offset-md-4">
                                  <p>Login With</p>
                                     <a href="{{ route('facebook.login') }}" class="btn btn-success btn-sm">Facebook</a>
-                                    <a href="" class="btn btn-success btn-sm">Google</a>
+                                    <a href="{{ route('google.login') }}" class="btn btn-success btn-sm">Google</a>
                                     <a href="{{ route('github.login') }}" class="btn btn-success btn-sm">GitHub</a>
                                 <div class="form-check">
                                    
