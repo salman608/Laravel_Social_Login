@@ -41,9 +41,14 @@
 
                         <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
+                                 <p>Login With</p>
+                                    <a href="{{ route('facebook.login') }}" class="btn btn-success btn-sm">Facebook</a>
+                                    <a href="" class="btn btn-success btn-sm">Google</a>
+                                    <a href="" class="btn btn-success btn-sm">GitHub</a>
                                 <div class="form-check">
+                                   
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
+                                    
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
