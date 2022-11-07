@@ -11,15 +11,15 @@ use Laravel\Socialite\Facades\Socialite;
 
 class SocialController extends Controller
 {
-    public function facebookRedirect()
+    public function githubRedirect()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('github')->redirect();
     }
 
-    public function loginWithFacebook()
+    public function loginWithGithub()
     {
-        $user = Socialite::driver('facebook')->stateless()->user();
-        $findUser = User::where('facebook_id', $user->id)->first();
+        $user = Socialite::driver('github')->stateless()->user();
+        $findUser = User::where('github_id', $user->id)->first();
         if ($findUser) {
             Auth::login($findUser);
             return redirect('/home');
@@ -27,7 +27,7 @@ class SocialController extends Controller
             $new_user = new User();
             $new_user->name = $user->name;
             $new_user->email = $user->email;
-            $new_user->facebook_id = $user->id;
+            $new_user->github_id = $user->id;
             $new_user->password = bcrypt(12345678);
             $new_user->save();
             Auth::login($new_user);

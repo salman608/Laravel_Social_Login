@@ -24,3 +24,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('login/facebook', [SocialController::class, 'facebookRedirect'])->name('facebook.login');
 Route::get('login/facebook/callback', [SocialController::class, 'loginWithFacebook']);
+
+Route::get('login/github', [SocialController::class, 'githubRedirect'])->name('github.login');
+Route::get('login/github/callback', [SocialController::class, 'loginWithGithub']);
